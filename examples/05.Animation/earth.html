@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../libs/aframe.min.js"></script>
+    <title>Animation Earth</title>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="sky" src="../../src/animation/sky.jpg">
+            <img id="sun" src="../../src/animation/sun.jpg">
+            <img id="earth" src="../../src/animation/earth.jpg">
+            <img id="moon" src="../../src/animation/moon.jpg">
+        </a-assets>
+
+        <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
+            animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
+        </a-entity>
+
+        <a-entity position="0 0 -30"
+            animation="property: rotation; to: 0 360 0; dur: 36500; easing: linear; loop: true">
+            <a-entity position="0 0 -26" geometry="primitive: sphere; radius:0.5;" material="src:#earth"
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+
+        <a-ring radius-inner="4" radius-outer="4.1" position="0 0 -30" rotation="-90 0 0" color="red"> </a-ring>
+
+        <a-sky src="#sky"></a-sky>
+    </a-scene>
+</body>
+
+</html>
